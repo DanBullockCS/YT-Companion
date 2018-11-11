@@ -8,11 +8,10 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.CornerRadii;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -25,6 +24,8 @@ public class Main extends Application {
     private Scene mainScene;
     private BorderPane mainPane;
     private BorderPane centerPane;
+    private GridPane bottomPane;
+    private Label credits;
     private TextField searchField;
     private MenuBar menuBar;
     private Menu searchItem;
@@ -37,7 +38,9 @@ public class Main extends Application {
     private ListView<Video> videoList;
     private WebView webview;
     private Image blackScreen;
+    private Image UOITLOGO;
     private ImageView blackScreenView;
+    private ImageView UOITLOGOView;
     private Boolean nightModeOn = false;
     private Boolean videoOn = false;
 
@@ -53,6 +56,9 @@ public class Main extends Application {
         // UI elements
         centerPane = new BorderPane();
         mainPane = new BorderPane();
+        bottomPane = new GridPane();
+        credits = new Label("Open House Demo, Fall 2018 Version \nCreated By: Daniel Bullock," +
+                " Samuel Pilkey, Kevin Desousa, and Leo Zbona");
         searchField = new TextField();
         webview = new WebView();
         searchField.setPromptText("Enter your search query here");
@@ -62,6 +68,19 @@ public class Main extends Application {
         nightModeItem = new Menu("Night Mode");
         searchHistItem = new Menu("Search History");
         videoHistoryItem = new Menu("Video History");
+
+        /* Branding code */
+        UOITLOGO = new Image("res/UOIT_Logo.png");
+        UOITLOGOView = new ImageView();
+        UOITLOGOView.setImage(UOITLOGO);
+        UOITLOGOView.setFitWidth(250);
+        UOITLOGOView.setPreserveRatio(true);
+        UOITLOGOView.setSmooth(true);
+        centerPane.setBottom(bottomPane);
+        credits.setFont(Font.font("Arial", FontWeight.BOLD, 20));
+        credits.setTextFill(Color.web("#0077CA")); // UOIT logo colour hex code
+        bottomPane.add(UOITLOGOView, 0, 0);
+        bottomPane.add(credits, 1, 0);
 
         // File to store searches
         File SearchHFile = new File("Search History.txt");
@@ -262,7 +281,8 @@ public class Main extends Application {
         centerPane.setLeft(videoList);
         mainPane.setTop(menuBar);
         mainPane.setCenter(centerPane);
-        mainScene = new Scene(mainPane, 1050, 500);
+        // Original dimensions of 1050x500
+        mainScene = new Scene(mainPane, 1050, 600);
 
         // Creates and starts the logo display
         Stage logoStage = new Stage();

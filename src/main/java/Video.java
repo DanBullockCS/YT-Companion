@@ -1,6 +1,6 @@
 public class Video {
     /*
-    * This class creates the embeded video link that is used to play the video
+    * This class creates the embedded video link that is used to play the video
     * */
 
     private String title;
@@ -29,7 +29,10 @@ public class Video {
         // rel=0:            Related videos off
         // modestbranding=1: No YouTube Logo in player
         // iv_load_policy=3: Default annotations off
-        return ("https://www.youtube.com/embed/" + this.getVideoID() + "?autoplay=1&fs=0&rel=0&modestbranding=1&iv_load_policy=3");
+        // loop=1 with &playlist=VIDEO_ID: Repeat video
+        return ("https://www.youtube.com/embed/" + this.getVideoID()
+                + "?autoplay=1&loop=1&playlist=" + this.getVideoID()
+                + "&fs=0&rel=0&modestbranding=1&iv_load_policy=3");
     }
 
 }

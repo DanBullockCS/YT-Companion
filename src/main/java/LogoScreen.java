@@ -29,7 +29,7 @@ public class LogoScreen extends Application {
         imageLogoView.setImage(youTubeLogo);
 
         loadingPane.setCenter(imageLogoView);
-        mainScene = new Scene(loadingPane, 1050, 500);
+        mainScene = new Scene(loadingPane, 1050, 600);
         primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.setScene(mainScene);
         primaryStage.show();
