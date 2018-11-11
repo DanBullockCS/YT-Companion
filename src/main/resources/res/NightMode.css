@@ -1,4 +1,9 @@
 /* Used for when the user wants to change to night mode*/
+/*Entire Background*/
+.root {
+    -fx-background-color: #303030;
+}
+
 /*Menu bars*/
 .menu-bar .label {
     -fx-text-fill: #FFFFFF;
@@ -46,4 +51,9 @@
 }
 .scroll-bar .thumb, .corner {
     -fx-background-color: #101010;
+}
+
+/*Labels*/
+.label {
+    -fx-text-fill: RED;
 }
