@@ -1,6 +1,9 @@
 # YT-Companion
 A Youtube companion app for Windows, University of Ontario Institute of Technology Fall 2018 Open House Version, Original project link below.
 
+# Example Gif
+<img src="gifs/YT-Companion.gif">
+
 # Link to the Original Repository:
 https://github.com/Desousak/YT-Companion
 

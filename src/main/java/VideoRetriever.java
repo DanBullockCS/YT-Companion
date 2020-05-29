@@ -38,7 +38,7 @@ public class VideoRetriever extends Thread {
     public static ArrayList<Video> getVideos(String keyword) {
         ArrayList<Video> videos = new ArrayList<>();
         try {
-            String apiKey = "AIzaSyA2rJ3kuns7kM0B-qLeGl6-BLpM_9whQr0";
+            String apiKey = "AIzaSyCyni3-m9xEyfe0nooReSr9DqN9Ft56lUU";
             int maxResults = 50;
             String url = "https://www.googleapis.com/youtube/v3/search" +
                     "?part=id%2Csnippet&q=" + keyword + "&key=" + apiKey + "&maxResults=" + maxResults;
